@@ -6,9 +6,9 @@ This script helps you quickly create multiple user accounts on a Linux system. I
 # Program Operation
 To use the script, you’ll need:
 
-A Linux system
-This Python script (create-users.py)
-An input file (create-users.input) with a list of users and their details
+1. A Linux system
+2. The  Python script (create-users.py)
+3. An input file (create-users.input) with a list of users and their details
 
 # Step One: Clone the repository to your system.
 
