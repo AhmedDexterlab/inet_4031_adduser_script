@@ -1,4 +1,4 @@
-# inet_4031_adduser_script
+# # inet_4031_adduser_script
 
 # Program Description
 This script helps you quickly create multiple user accounts on a Linux system. Instead of adding each user manually, the script reads user details from an input file and automatically creates usernames, sets passwords, and assigns groups. It’s super helpful for managing a lot of accounts at once.
