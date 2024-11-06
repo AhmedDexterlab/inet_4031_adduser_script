@@ -1,6 +1,13 @@
 #!/usr/bin/python3
+#### Student Name: Ahmed Abdi
+#### Program Name: User Creation Script
+#### Program Creation Date: 11-06-2024
+#### Program Last Updated Date: 11-06-2024
 
 #what are these imports being used for?
+# - 'os' is used to execute system commands for creating users and groups.
+# - 're' is used for regular expressions to match patterns.
+# - 'sys' is used to read input from the command line.
 import os
 import re
 import sys
@@ -9,14 +16,15 @@ def main():
     for line in sys.stdin:
 
         #this "regular expression" is searching for the presence of a character - what is it and why?
+                # Skip lines starting with '#' to ignore comments in the input file
         match = re.match("^#",line)
 
         #what is this field doing?
+                # Split the line by ':' to get user details
         fields = line.strip().split(':')
 
-        #what would an appropriate comment be for describing what this IF statement is checking for?
-        #what happens if the IF statement evaluates to true?
-        #how does this IF statement rely on what happened in the prior two lines of code? The match and fields lines.
+        # Checks if the line is a comment or incorrectly formatted (not 5 fields)
+        # If true, skip this line
         if match or len(fields) != 5:
             continue
 
@@ -35,11 +43,12 @@ def main():
 
         for group in groups:
             #what is this if statement looking for?
+                # Skip if the group field is '-'
             if group != '-':
                 print("==> Assigning %s to the %s group..." % (username,group))
                 cmd = "/usr/sbin/adduser %s %s" % (username,group)
                 #print cmd
-                #os.system(cmd)
+                 os.system(cmd)
 
 if __name__ == '__main__':
     main()
